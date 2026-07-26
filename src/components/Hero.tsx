@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="hero">
       <div className="wrap hero-grid">
         <div>
-          <Eyebrow>BLK 51 &rarr; Raffles Places &middot; MON / WED / FRI &middot; 08:15</Eyebrow>
+          <Eyebrow>BLK 51 &rarr; Raffles Place &middot; MON / WED / FRI &middot; 08:15</Eyebrow>
           <h1>
             Someone from your block is <em>already</em> driving to town.
           </h1>
