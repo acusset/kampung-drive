@@ -15,7 +15,7 @@ const NEIGHBOURS = [
     initial: "M",
     avatarClass: "a2",
     name: "Mei Ling",
-    route: "BLK ABC",
+    route: "BLK ABC → CBP · Changi Business Park",
     days: [false, true, false, true, false],
   },
   {
@@ -34,7 +34,7 @@ export default function Commute() {
         <Reveal className="section-head">
           <Eyebrow>MEET YOUR COMMUTE</Eyebrow>
           <h2>Your neighbours are already going your way.</h2>
-          <p>A few of the regular runs being registered near Normanton Park this week.</p>
+          <p>A few of the regular runs being registered near The Interlace this week.</p>
         </Reveal>
         <div className="cards">
           {NEIGHBOURS.map((person) => (

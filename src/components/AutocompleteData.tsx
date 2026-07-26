@@ -1,5 +1,4 @@
 const ESTATES = [
-  "Normanton Park",
   "Queenstown",
   "Tiong Bahru",
   "Redhill",

@@ -15,10 +15,10 @@ export default function TransitDiagram() {
         <g>
           <circle cx="20" cy="90" r="9" fill="none" stroke="#F2A93B" strokeWidth={2.5} />
           <text x="20" y="118" fill="#F6F1E4" fontFamily="SFMono-Regular,Consolas,monospace" fontSize="10.5" textAnchor="middle">
-            NORMANTON
+            THE
           </text>
           <text x="20" y="130" fill="#F6F1E4" fontFamily="SFMono-Regular,Consolas,monospace" fontSize="10.5" textAnchor="middle">
-            PARK
+            INTERLACE
           </text>
         </g>
         <g>
