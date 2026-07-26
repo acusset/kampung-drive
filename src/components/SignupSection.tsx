@@ -13,7 +13,7 @@ export default function SignupSection() {
         <Eyebrow>EARLY ACCESS</Eyebrow>
         <h2>Be first through the gate.</h2>
         <p>
-          We&rsquo;re building Chope estate by estate. Leave your email and we&rsquo;ll let you know the
+          We&rsquo;re building Kampung Ride estate by estate. Leave your email and we&rsquo;ll let you know the
           moment your block goes live.
         </p>
 

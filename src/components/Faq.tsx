@@ -4,11 +4,11 @@ import Reveal from "./Reveal";
 const FAQS = [
   {
     q: "Is this a taxi or ride-hailing service?",
-    a: "No. Chope only matches you with people already driving the route you need, on the days you need it — usually a neighbour, never a stranger from across the island.",
+    a: "No. Kampung Ride only matches you with people already driving the route you need, on the days you need it — usually a neighbour, never a stranger from across the island.",
   },
   {
     q: "Do I need to already know my neighbours?",
-    a: "No. That's the point. Chope surfaces the regular commutes happening in your own estate so you can meet the people making the same trip.",
+    a: "No. That's the point. Kampung Ride surfaces the regular commutes happening in your own estate so you can meet the people making the same trip.",
   },
   {
     q: "Which estates are you starting with?",

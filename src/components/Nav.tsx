@@ -3,7 +3,7 @@ export default function Nav() {
     <nav>
       <div className="nav-inner">
         <a href="#top" className="logo">
-          Chope<span>.</span>
+          Kampung Ride<span>.</span>
         </a>
         <ul className="nav-links">
           <li>

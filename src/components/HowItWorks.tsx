@@ -26,7 +26,7 @@ export default function HowItWorks() {
         <Reveal className="section-head">
           <Eyebrow>HOW IT WORKS</Eyebrow>
           <h2>Three steps, no detours.</h2>
-          <p>Chope matches on the two things that actually matter: your estate, and your schedule.</p>
+          <p>Kampung Ride matches on the two things that actually matter: your estate, and your schedule.</p>
         </Reveal>
         <div className="steps">
           {STEPS.map((step) => (
