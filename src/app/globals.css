@@ -300,6 +300,9 @@ form.signup button:disabled {
   letter-spacing: 0.05em;
   margin-bottom: 18px;
 }
+.transit-card svg {
+  overflow: visible;
+}
 .rider-dot {
   animation: ride 6s linear infinite;
 }
