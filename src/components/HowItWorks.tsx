@@ -1,5 +1,7 @@
 import Eyebrow from "./Eyebrow";
 import Reveal from "./Reveal";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const STEPS = [
   {
@@ -28,12 +30,23 @@ export default function HowItWorks() {
           <h2>Three steps, no detours.</h2>
           <p>Kampung Ride matches on the two things that actually matter: your estate, and your schedule.</p>
         </Reveal>
-        <div className="steps">
+        <div className="grid grid-cols-3 gap-7 max-[820px]:grid-cols-1">
           {STEPS.map((step) => (
-            <Reveal key={step.tag} className="step">
-              <span className="tag">{step.tag}</span>
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
+            <Reveal key={step.tag}>
+              <Card className="h-full">
+                <CardHeader>
+                  <Badge
+                    variant="outline"
+                    className="mb-2 w-fit border-primary/30 bg-primary/10 font-mono text-xs tracking-wide text-primary"
+                  >
+                    {step.tag}
+                  </Badge>
+                  <CardTitle className="font-[family-name:var(--serif)] text-xl">{step.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-[15px] text-muted-foreground">{step.body}</p>
+                </CardContent>
+              </Card>
             </Reveal>
           ))}
         </div>
