@@ -1,0 +1,4 @@
+- [Kampung Ride core idea](project_kampung_ride_core.md) — neighbourhood carpooling app for Singapore, matching residents in same condo/HDB on same commute
+- [Current landing page structure](project_landing_page_structure.md) — sections, headlines, and form fields as of Aug 2026
+- [Open strategic questions](project_open_questions.md) — supply-side cold-start, LTA regulatory framing, monetization not yet defined
+- [Advice given: hero split & referral loop](feedback_advice_given_v1.md) — priority stack of landing-page changes recommended in first session
