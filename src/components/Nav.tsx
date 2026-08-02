@@ -1,24 +1,35 @@
+import { Button } from "@/components/ui/button";
+
 export default function Nav() {
   return (
-    <nav>
-      <div className="nav-inner">
-        <a href="#top" className="logo">
-          Kampung Ride<span>.</span>
+    <nav className="sticky top-0 z-50 border-b border-border bg-background/92 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-[1120px] items-center justify-between px-8 py-4.5 max-[760px]:px-5 max-[760px]:py-4">
+        <a
+          href="#top"
+          className="font-[family-name:var(--serif)] text-2xl font-bold tracking-[0.5px] text-foreground no-underline"
+        >
+          Kampung Ride<span className="text-primary">.</span>
         </a>
-        <ul className="nav-links">
+        <ul className="flex list-none items-center gap-8 max-[760px]:hidden">
           <li>
-            <a href="#how">How it works</a>
+            <a href="#how" className="text-sm text-muted-foreground no-underline transition-colors hover:text-foreground">
+              How it works
+            </a>
           </li>
           <li>
-            <a href="#commute">Meet your commute</a>
+            <a href="#commute" className="text-sm text-muted-foreground no-underline transition-colors hover:text-foreground">
+              Meet your commute
+            </a>
           </li>
           <li>
-            <a href="#faq">FAQ</a>
+            <a href="#faq" className="text-sm text-muted-foreground no-underline transition-colors hover:text-foreground">
+              FAQ
+            </a>
           </li>
         </ul>
-        <a href="#signup" className="nav-cta">
-          Get early access
-        </a>
+        <Button asChild>
+          <a href="#signup">Get early access</a>
+        </Button>
       </div>
     </nav>
   );
