@@ -1,8 +1,15 @@
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+
 export default function TransitDiagram() {
   return (
-    <div className="transit-card">
-      <div className="tc-label">YOUR ROUTE, MAPPED</div>
-      <svg
+    <Card>
+      <CardHeader>
+        <div className="font-[family-name:var(--mono)] text-xs tracking-wide text-[color:var(--sage)]">
+          YOUR ROUTE, MAPPED
+        </div>
+      </CardHeader>
+      <CardContent className="overflow-visible">
+        <svg
         viewBox="0 0 340 190"
         width="100%"
         role="img"
@@ -43,7 +50,8 @@ export default function TransitDiagram() {
             PLACE
           </text>
         </g>
-      </svg>
-    </div>
+        </svg>
+      </CardContent>
+    </Card>
   );
 }
