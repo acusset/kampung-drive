@@ -2,9 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { useWaitlist } from "./WaitlistContext";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Alert, Button, Input } from "@heroui/react";
 import { cn } from "@/lib/utils";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -124,15 +122,17 @@ export default function SignupForm({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <Button type="submit" disabled={busy} size="lg">
+          <Button type="submit" isDisabled={busy} size="lg">
             {status === "submitting" ? "Adding you…" : status === "success" ? "Added ✓" : submitLabel}
           </Button>
         </div>
       </form>
       <div className="mt-3 min-h-9">
         {message && (
-          <Alert variant={message.ok ? "success" : "destructive"}>
-            <AlertDescription>{message.text}</AlertDescription>
+          <Alert status={message.ok ? "success" : "danger"}>
+            <Alert.Content>
+              <Alert.Description>{message.text}</Alert.Description>
+            </Alert.Content>
           </Alert>
         )}
       </div>

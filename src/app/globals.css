@@ -1,8 +1,8 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import "@heroui/styles";
 
-@custom-variant dark (&:is(.dark *));
+@theme inline {
+  --font-sans: var(--font-sans);
+}
 
 :root {
   --bg: #10302b;
@@ -17,39 +17,38 @@
   --serif: Georgia, Cambria, "Times New Roman", serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  --background: #10302b;
-  --foreground: #f6f1e4;
-  --card: #173f38;
-  --card-foreground: #f6f1e4;
-  --popover: #173f38;
-  --popover-foreground: #f6f1e4;
-  --primary: #f2a93b;
-  --primary-foreground: #3b2002;
-  --secondary: #1d4b42;
-  --secondary-foreground: #f6f1e4;
-  --muted: #173f38;
-  --muted-foreground: #c9cdbf;
-  --accent: #1d4b42;
-  --accent-foreground: #f6f1e4;
-  --destructive: #e8664a;
-  --border: rgba(246, 241, 228, 0.14);
-  --input: #173f38;
-  --ring: #f2a93b;
+
+  /* HeroUI theme tokens, remapped to the Kampung Ride dark forest palette */
+  --background: var(--bg);
+  --foreground: var(--cream);
+  --surface: var(--bg-panel);
+  --surface-foreground: var(--cream);
+  --surface-secondary: var(--bg-panel-2);
+  --overlay: var(--bg-panel);
+  --overlay-foreground: var(--cream);
+  --muted: var(--cream-dim);
+  --accent: var(--amber);
+  --accent-foreground: #3b2002;
+  --success: var(--sage);
+  --success-foreground: #173404;
+  --danger: var(--coral);
+  --danger-foreground: #3b140a;
+  --border: var(--line);
+  --separator: var(--line);
+  --field-background: var(--bg-panel);
+  --field-foreground: var(--cream);
+  --field-border: var(--line);
+  --field-border-width: 1px;
+  --field-placeholder: #8fa39b;
   --radius: 0.625rem;
-  --sidebar: #173f38;
-  --sidebar-foreground: #f6f1e4;
-  --sidebar-primary: #f2a93b;
-  --sidebar-primary-foreground: #3b2002;
-  --sidebar-accent: #1d4b42;
-  --sidebar-accent-foreground: #f6f1e4;
-  --sidebar-border: rgba(246, 241, 228, 0.14);
-  --sidebar-ring: #f2a93b;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 html {
@@ -377,13 +376,13 @@ form.signup button:disabled {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(268px);
+    transform: translateX(260px);
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .rider-dot {
     animation: none;
-    transform: translateX(120px);
+    transform: translateX(116px);
   }
 }
 
@@ -470,88 +469,6 @@ h2 {
 /* commute cards */
 .commute {
   background: var(--bg-panel);
-}
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-@media (max-width: 820px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-.card {
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 22px;
-  transition:
-    transform 0.15s,
-    border-color 0.15s;
-}
-.card:hover {
-  transform: translateY(-3px);
-  border-color: var(--sage);
-}
-.card-top {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-.avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 15px;
-  font-family: var(--serif);
-  flex-shrink: 0;
-}
-.a1 {
-  background: #f2a93b;
-  color: #412402;
-}
-.a2 {
-  background: #e8664a;
-  color: #4a1b0c;
-}
-.a3 {
-  background: #8fb6a6;
-  color: #173404;
-}
-.card-name {
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--cream);
-}
-.card-route {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--sage);
-  margin-top: 2px;
-}
-.card-days {
-  display: flex;
-  gap: 6px;
-  margin-top: 14px;
-  flex-wrap: wrap;
-}
-.day {
-  font-family: var(--mono);
-  font-size: 11px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--cream-dim);
-}
-.day.on {
-  background: rgba(242, 169, 59, 0.18);
-  color: var(--amber);
 }
 
 /* signup section */
@@ -696,57 +613,3 @@ footer {
   }
 }
 
-@theme inline {
-  --font-heading: var(--font-sans);
-  --font-sans: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --color-foreground: var(--foreground);
-  --color-background: var(--background);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
-  }
-}

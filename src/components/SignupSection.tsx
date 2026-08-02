@@ -3,8 +3,7 @@
 import Eyebrow from "./Eyebrow";
 import SignupForm from "./SignupForm";
 import { useWaitlist } from "./WaitlistContext";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, Chip } from "@heroui/react";
 
 export default function SignupSection() {
   const { count, trending } = useWaitlist();
@@ -21,39 +20,40 @@ export default function SignupSection() {
 
         <SignupForm submitLabel="Join the waitlist" center />
 
-        <Badge
-          variant="outline"
-          className="mt-6 gap-2 border-[color:var(--sage)]/25 bg-[color:var(--sage)]/10 py-1.5 font-mono text-xs text-[color:var(--sage)]"
+        <Chip
+          variant="soft"
+          color="success"
+          className="mt-6 gap-2 border border-success/25 py-1.5 font-mono text-xs"
         >
-          <span className="font-bold text-primary">{count}</span> neighbours on the list so far
-        </Badge>
+          <span className="font-bold text-accent">{count}</span> neighbours on the list so far
+        </Chip>
         <p className="micro mt-3.5">
           Your route joins our live demand map below, visible to everyone &mdash; your email itself stays
           private and isn&rsquo;t shown to anyone.
         </p>
 
         <Card className="mt-9 text-left">
-          <CardHeader>
+          <Card.Header>
             <div className="font-[family-name:var(--mono)] text-xs tracking-wide text-[color:var(--sage)]">
               MOST REQUESTED ROUTES
             </div>
-          </CardHeader>
-          <CardContent className="flex flex-col gap-2.5">
+          </Card.Header>
+          <Card.Content className="flex flex-col gap-2.5">
             {trending.length === 0 ? (
-              <span className="text-[13px] text-muted-foreground">Be the first to register a route.</span>
+              <span className="text-[13px] text-muted">Be the first to register a route.</span>
             ) : (
               trending.map((route) => (
                 <div key={`${route.from}->${route.to}`} className="flex items-center justify-between text-sm">
                   <span className="font-[family-name:var(--mono)] text-foreground">
                     {route.from} &rarr; {route.to}
                   </span>
-                  <Badge className="bg-primary/12 font-mono text-xs text-primary">
+                  <Chip variant="soft" color="accent" className="font-mono text-xs">
                     {route.count} {route.count === 1 ? "neighbour" : "neighbours"}
-                  </Badge>
+                  </Chip>
                 </div>
               ))
             )}
-          </CardContent>
+          </Card.Content>
         </Card>
       </div>
     </section>

@@ -1,8 +1,6 @@
 import Eyebrow from "./Eyebrow";
 import Reveal from "./Reveal";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+import { Avatar, Card, Chip } from "@heroui/react";
 
 const DAY_LABELS = ["MON", "TUE", "WED", "THU", "FRI"];
 
@@ -43,11 +41,11 @@ export default function Commute() {
           {NEIGHBOURS.map((person) => (
             <Reveal key={person.name}>
               <Card className="h-full transition-transform hover:-translate-y-0.75">
-                <CardHeader className="flex-row items-center gap-3">
+                <Card.Header className="flex-row items-center gap-3">
                   <Avatar size="lg">
-                    <AvatarFallback className={`font-[family-name:var(--serif)] font-bold ${person.avatarColor}`}>
+                    <Avatar.Fallback className={`font-[family-name:var(--serif)] font-bold ${person.avatarColor}`}>
                       {person.initial}
-                    </AvatarFallback>
+                    </Avatar.Fallback>
                   </Avatar>
                   <div>
                     <div className="text-[15px] font-bold text-foreground">{person.name}</div>
@@ -55,22 +53,19 @@ export default function Commute() {
                       {person.route}
                     </div>
                   </div>
-                </CardHeader>
-                <CardContent className="flex flex-wrap gap-1.5">
+                </Card.Header>
+                <Card.Content className="flex flex-row flex-wrap gap-1.5">
                   {DAY_LABELS.map((label, i) => (
-                    <Badge
+                    <Chip
                       key={label}
-                      variant={person.days[i] ? "default" : "secondary"}
-                      className={
-                        person.days[i]
-                          ? "bg-primary/18 font-mono text-[11px] text-primary"
-                          : "bg-white/6 font-mono text-[11px] text-muted-foreground"
-                      }
+                      variant={person.days[i] ? "soft" : "secondary"}
+                      color={person.days[i] ? "accent" : "default"}
+                      className="font-mono text-[11px]"
                     >
                       {label}
-                    </Badge>
+                    </Chip>
                   ))}
-                </CardContent>
+                </Card.Content>
               </Card>
             </Reveal>
           ))}

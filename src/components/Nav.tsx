@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@heroui/styles";
 
 export default function Nav() {
   return (
@@ -8,28 +8,28 @@ export default function Nav() {
           href="#top"
           className="font-[family-name:var(--serif)] text-2xl font-bold tracking-[0.5px] text-foreground no-underline"
         >
-          Kampung Ride<span className="text-primary">.</span>
+          Kampung Ride<span className="text-accent">.</span>
         </a>
         <ul className="flex list-none items-center gap-8 max-[760px]:hidden">
           <li>
-            <a href="#how" className="text-sm text-muted-foreground no-underline transition-colors hover:text-foreground">
+            <a href="#how" className="text-sm text-muted no-underline transition-colors hover:text-foreground">
               How it works
             </a>
           </li>
           <li>
-            <a href="#commute" className="text-sm text-muted-foreground no-underline transition-colors hover:text-foreground">
+            <a href="#commute" className="text-sm text-muted no-underline transition-colors hover:text-foreground">
               Meet your commute
             </a>
           </li>
           <li>
-            <a href="#faq" className="text-sm text-muted-foreground no-underline transition-colors hover:text-foreground">
+            <a href="#faq" className="text-sm text-muted no-underline transition-colors hover:text-foreground">
               FAQ
             </a>
           </li>
         </ul>
-        <Button asChild>
-          <a href="#signup">Get early access</a>
-        </Button>
+        <a href="#signup" className={buttonVariants({ variant: "primary" })}>
+          Get early access
+        </a>
       </div>
     </nav>
   );

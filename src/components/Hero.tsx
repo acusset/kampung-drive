@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import type { Key } from "@heroui/react";
+import { ToggleButton, ToggleButtonGroup } from "@heroui/react";
 import Eyebrow from "./Eyebrow";
 import SignupForm from "./SignupForm";
 import TransitDiagram from "./TransitDiagram";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 type Role = "driver" | "rider";
 
@@ -51,27 +52,20 @@ export default function Hero() {
         <div>
           <Eyebrow>BLK 51 &rarr; Raffles Place &middot; MON / WED / FRI &middot; 08:15</Eyebrow>
 
-          <ToggleGroup
-            type="single"
-            value={role}
-            onValueChange={(value) => {
+          <ToggleButtonGroup
+            selectionMode="single"
+            disallowEmptySelection
+            isDetached
+            selectedKeys={new Set<Key>([role])}
+            onSelectionChange={(keys) => {
+              const [value] = [...keys];
               if (value) setRole(value as Role);
             }}
-            className="mb-7 gap-1 bg-muted p-1"
+            className="mb-7 flex gap-1 rounded-full bg-surface-secondary p-1"
           >
-            <ToggleGroupItem
-              value="driver"
-              className="rounded-md px-4.5 py-2 font-medium data-[state=on]:bg-primary data-[state=on]:text-primary-foreground data-[state=on]:hover:bg-primary"
-            >
-              I drive
-            </ToggleGroupItem>
-            <ToggleGroupItem
-              value="rider"
-              className="rounded-md px-4.5 py-2 font-medium data-[state=on]:bg-primary data-[state=on]:text-primary-foreground data-[state=on]:hover:bg-primary"
-            >
-              I need a ride
-            </ToggleGroupItem>
-          </ToggleGroup>
+            <ToggleButton id="driver">I drive</ToggleButton>
+            <ToggleButton id="rider">I need a ride</ToggleButton>
+          </ToggleButtonGroup>
 
           <h1>{copy.h1}</h1>
           <p className="sub">{copy.sub}</p>

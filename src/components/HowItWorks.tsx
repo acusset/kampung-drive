@@ -1,7 +1,6 @@
 import Eyebrow from "./Eyebrow";
 import Reveal from "./Reveal";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, Chip } from "@heroui/react";
 
 const STEPS = [
   {
@@ -34,18 +33,19 @@ export default function HowItWorks() {
           {STEPS.map((step) => (
             <Reveal key={step.tag}>
               <Card className="h-full">
-                <CardHeader>
-                  <Badge
-                    variant="outline"
-                    className="mb-2 w-fit border-primary/30 bg-primary/10 font-mono text-xs tracking-wide text-primary"
+                <Card.Header>
+                  <Chip
+                    variant="soft"
+                    color="accent"
+                    className="mb-2 w-fit border border-accent/30 font-mono text-xs tracking-wide"
                   >
                     {step.tag}
-                  </Badge>
-                  <CardTitle className="font-[family-name:var(--serif)] text-xl">{step.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[15px] text-muted-foreground">{step.body}</p>
-                </CardContent>
+                  </Chip>
+                  <Card.Title className="font-[family-name:var(--serif)] text-xl">{step.title}</Card.Title>
+                </Card.Header>
+                <Card.Content>
+                  <p className="text-[15px] text-muted">{step.body}</p>
+                </Card.Content>
               </Card>
             </Reveal>
           ))}
