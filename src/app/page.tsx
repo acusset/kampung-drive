@@ -7,14 +7,19 @@ import HowItWorks from "@/components/HowItWorks";
 import Nav from "@/components/Nav";
 import Problem from "@/components/Problem";
 import SignupSection from "@/components/SignupSection";
-import { WaitlistProvider } from "@/components/WaitlistContext";
-import { getWaitlistSummary } from "@/lib/waitlistStore";
+import { WaitlistProvider, type WaitlistSummary } from "@/components/WaitlistContext";
 
-// The waitlist count/trending list change on every signup — never prerender this as static.
-export const dynamic = "force-dynamic";
+const PLACEHOLDER_SUMMARY: WaitlistSummary = {
+  count: 42,
+  trending: [
+    { from: "Clementi", to: "One-North", count: 12 },
+    { from: "Jurong East", to: "Raffles Place", count: 9 },
+    { from: "Tampines", to: "Marina Bay", count: 7 },
+  ],
+};
 
 export default async function Home() {
-  const summary = await getWaitlistSummary();
+  const summary = PLACEHOLDER_SUMMARY;
 
   return (
     <WaitlistProvider initial={summary}>
