@@ -20,6 +20,21 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Database
+
+This project uses Postgres (via Docker) and Drizzle ORM.
+
+1. Copy `.env.example` to `.env.local` and adjust values if needed (this file is gitignored).
+2. Start Colima (once per machine reboot): `colima start`
+3. Start the database container: `npm run db:up`
+4. Apply migrations: `npm run db:migrate`
+
+Other useful scripts:
+
+- `npm run db:down` — stop the database container
+- `npm run db:generate` — generate a new migration from `src/lib/db/schema.ts`
+- `npm run db:studio` — open Drizzle Studio
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
