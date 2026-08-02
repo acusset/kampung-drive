@@ -1,0 +1,363 @@
+{
+  "hdb": [
+    {
+      "town": "Ang Mo Kio",
+      "areas": [
+        "Ang Mo Kio Central",
+        "Cheng San",
+        "Kebun Bahru",
+        "Lower Ang Mo Kio",
+        "Upper Ang Mo Kio"
+      ]
+    },
+    {
+      "town": "Bedok",
+      "areas": [
+        "Bedok Central",
+        "Bedok North",
+        "Bedok Reservoir",
+        "Bedok South",
+        "Chai Chee",
+        "Kembangan",
+        "Siglap",
+        "Tanah Merah",
+        "Upper Changi"
+      ]
+    },
+    {
+      "town": "Bishan",
+      "areas": [
+        "Bishan Central",
+        "Bishan North",
+        "Bishan South",
+        "Sin Ming"
+      ]
+    },
+    {
+      "town": "Bukit Batok",
+      "areas": [
+        "Bukit Batok Central",
+        "Bukit Batok East",
+        "Bukit Batok North",
+        "Bukit Batok West",
+        "Bukit Gombak",
+        "Hill View",
+        "Toh Yi"
+      ]
+    },
+    {
+      "town": "Bukit Merah",
+      "areas": [
+        "Alexandra",
+        "Bukit Merah Central",
+        "Henderson",
+        "Redhill",
+        "Telok Blangah",
+        "Tiong Bahru"
+      ]
+    },
+    {
+      "town": "Bukit Panjang",
+      "areas": [
+        "Bangkit",
+        "Bukit Panjang Central",
+        "Fajar",
+        "Jelapang",
+        "Pending",
+        "Senja",
+        "Zhenghua"
+      ]
+    },
+    {
+      "town": "Choa Chu Kang",
+      "areas": [
+        "Choa Chu Kang Central",
+        "Keat Hong",
+        "Limbang",
+        "Teck Whye",
+        "Yew Tee"
+      ]
+    },
+    {
+      "town": "Clementi",
+      "areas": [
+        "Clementi Central",
+        "Clementi West",
+        "Dover",
+        "Sunset Way",
+        "West Coast"
+      ]
+    },
+    {
+      "town": "Geylang",
+      "areas": [
+        "Aljunied",
+        "Eunos",
+        "Geylang Bahru",
+        "Geylang East",
+        "Kallang Bahru",
+        "Paya Lebar",
+        "Ubi"
+      ]
+    },
+    {
+      "town": "Hougang",
+      "areas": [
+        "Hougang Central",
+        "Hougang North",
+        "Hougang South",
+        "Kovan",
+        "Lorong Ah Soo"
+      ]
+    },
+    {
+      "town": "Jurong East",
+      "areas": [
+        "Jurong East Central",
+        "Lakeside",
+        "Teban Gardens",
+        "Toh Guan",
+        "Yuhua"
+      ]
+    },
+    {
+      "town": "Jurong West",
+      "areas": [
+        "Boon Lay",
+        "Jurong West Central",
+        "Pioneer",
+        "Wenya",
+        "Yunnan"
+      ]
+    },
+    {
+      "town": "Kallang",
+      "areas": [
+        "Bendemeer",
+        "Boon Keng",
+        "Crawford",
+        "Kolam Ayer",
+        "Lavender",
+        "Whampoa"
+      ]
+    },
+    {
+      "town": "Pasir Ris",
+      "areas": [
+        "Elias",
+        "Loyang",
+        "Pasir Ris Central",
+        "Pasir Ris Drive 1",
+        "Pasir Ris Drive 3",
+        "Pasir Ris Drive 6",
+        "Pasir Ris Drive 10",
+        "Pasir Ris West"
+      ]
+    },
+    {
+      "town": "Punggol",
+      "areas": [
+        "Northshore",
+        "Punggol Central",
+        "Punggol East",
+        "Punggol North",
+        "Punggol South",
+        "Punggol Waterway"
+      ]
+    },
+    {
+      "town": "Queenstown",
+      "areas": [
+        "Buona Vista",
+        "Commonwealth",
+        "Dawson",
+        "Ghim Moh",
+        "Holland Drive",
+        "Margaret Drive",
+        "Mei Ling",
+        "Queenstown Central",
+        "Tanglin Halt"
+      ]
+    },
+    {
+      "town": "Sembawang",
+      "areas": [
+        "Admiralty",
+        "Canberra",
+        "Sembawang Central",
+        "Sembawang North"
+      ]
+    },
+    {
+      "town": "Sengkang",
+      "areas": [
+        "Anchorvale",
+        "Buangkok",
+        "Compassvale",
+        "Fernvale",
+        "Rivervale",
+        "Sengkang Central"
+      ]
+    },
+    {
+      "town": "Serangoon",
+      "areas": [
+        "Bartley",
+        "Lorong Chuan",
+        "Serangoon Central",
+        "Serangoon North",
+        "Upper Serangoon"
+      ]
+    },
+    {
+      "town": "Tampines",
+      "areas": [
+        "Simei",
+        "Tampines Central",
+        "Tampines East",
+        "Tampines North",
+        "Tampines Round Market",
+        "Tampines West"
+      ]
+    },
+    {
+      "town": "Toa Payoh",
+      "areas": [
+        "Braddell",
+        "Kim Keat",
+        "Toa Payoh Central",
+        "Toa Payoh Lorong 1",
+        "Toa Payoh Lorong 2",
+        "Toa Payoh Lorong 4",
+        "Toa Payoh Lorong 5",
+        "Toa Payoh Lorong 6",
+        "Toa Payoh Lorong 7",
+        "Toa Payoh Lorong 8"
+      ]
+    },
+    {
+      "town": "Woodlands",
+      "areas": [
+        "Admiralty",
+        "Marsiling",
+        "Woodgrove",
+        "Woodlands Central",
+        "Woodlands East",
+        "Woodlands North",
+        "Woodlands South"
+      ]
+    },
+    {
+      "town": "Yishun",
+      "areas": [
+        "Khatib",
+        "Northland",
+        "Yishun Central",
+        "Yishun East",
+        "Yishun North",
+        "Yishun South",
+        "Yishun West"
+      ]
+    }
+  ],
+  "destinations": [
+    {
+      "area": "CBD",
+      "locations": [
+        "Raffles Place",
+        "Shenton Way",
+        "Robinson Road",
+        "Anson Road",
+        "Tanjong Pagar",
+        "Collyer Quay",
+        "Boat Quay",
+        "Marina Bay",
+        "Marina Bay Financial Centre",
+        "Marina One",
+        "One Raffles Quay",
+        "Capital Tower"
+      ]
+    },
+    {
+      "area": "Business Parks",
+      "locations": [
+        "one-north (Biopolis)",
+        "one-north (Fusionopolis)",
+        "one-north (Mediapolis)",
+        "Changi Business Park",
+        "International Business Park",
+        "Mapletree Business City",
+        "Alexandra Technopark",
+        "Science Park 1",
+        "Science Park 2",
+        "Harbourfront Centre",
+        "Keppel Bay"
+      ]
+    },
+    {
+      "area": "Regional Centres & Hubs",
+      "locations": [
+        "Bugis / Beach Road",
+        "Dhoby Ghaut",
+        "Jurong Gateway",
+        "Jurong Lake District",
+        "Novena",
+        "Orchard",
+        "Paya Lebar Quarter",
+        "Suntec City",
+        "Tampines Regional Centre",
+        "Woodlands Regional Centre"
+      ]
+    }
+  ],
+  "condos": [
+    "Affinity at Serangoon",
+    "Amber Park",
+    "Ardmore Park",
+    "Canberra Residences",
+    "Canninghill Piers",
+    "Coastline Residences",
+    "Cuscaden Reserve",
+    "Dairy Farm Residences",
+    "Florence Residences",
+    "Forett at Bukit Timah",
+    "Garden Residences",
+    "Goodwood Residence",
+    "High Park Residences",
+    "Jadescape",
+    "Kent Ridge Hill Residences",
+    "Klimt Cairnhill",
+    "Le Nouvel Ardmore",
+    "Leedon Residence",
+    "Mori",
+    "Nassim Park Residences",
+    "Normanton Park",
+    "One Bernam",
+    "One Holland Village Residences",
+    "One-North Eden",
+    "Parc Botannia",
+    "Parc Canberra",
+    "Parc Clematis",
+    "Parc Esta",
+    "Parc Greenwich",
+    "Perfect Ten",
+    "Provence Residence",
+    "Pullman Residences Newton",
+    "Riverfront Residences",
+    "Riviere",
+    "Scotts Square",
+    "Sky Everton",
+    "St Regis Residences",
+    "The Clement Canopy",
+    "The Gazebo",
+    "The Interlace",
+    "The Landmark",
+    "The Sail @ Marina Bay",
+    "The Tre Ver",
+    "The Watergardens at Canberra",
+    "Treasure at Tampines",
+    "Twin Vew",
+    "Verdale",
+    "Whistler Grand"
+  ]
+}
