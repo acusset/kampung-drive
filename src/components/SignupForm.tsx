@@ -2,6 +2,10 @@
 
 import { useState, type FormEvent } from "react";
 import { useWaitlist } from "./WaitlistContext";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { cn } from "@/lib/utils";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -17,9 +21,11 @@ type Status = "idle" | "submitting" | "success";
 export default function SignupForm({
   submitLabel,
   center = false,
+  role = "driver",
 }: {
   submitLabel: string;
   center?: boolean;
+  role?: "driver" | "rider";
 }) {
   const { applyUpdate } = useWaitlist();
   const [from, setFrom] = useState("");
@@ -51,7 +57,7 @@ export default function SignupForm({
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: cleanEmail, from: cleanFrom, to: cleanTo }),
+        body: JSON.stringify({ email: cleanEmail, from: cleanFrom, to: cleanTo, role }),
       });
       const data = await res.json().catch(() => null);
 
@@ -80,49 +86,55 @@ export default function SignupForm({
   return (
     <>
       <form
-        className="signup"
-        style={center ? { margin: "32px auto 0", justifyContent: "center" } : undefined}
+        className={cn("mt-8 flex max-w-[460px] flex-col gap-2.5", center && "mx-auto")}
         onSubmit={handleSubmit}
       >
-        <div className="signup-row">
-          <input
+        <div className="flex flex-wrap gap-2.5">
+          <Input
             type="text"
             list="estates"
             placeholder="From: your estate"
             required
             aria-label="Your estate or condo"
-            className="from-input"
+            className="min-w-0 flex-1 basis-[130px] py-3.5"
             value={from}
             onChange={(e) => setFrom(e.target.value)}
           />
-          <span className="route-arrow">&rarr;</span>
-          <input
+          <span className="flex flex-none items-center justify-center px-0.5 font-[family-name:var(--mono)] text-sm text-[color:var(--sage)]">
+            &rarr;
+          </span>
+          <Input
             type="text"
             list="destinations"
             placeholder="To: your destination"
             required
             aria-label="Your destination"
-            className="to-input"
+            className="min-w-0 flex-1 basis-[130px] py-3.5"
             value={to}
             onChange={(e) => setTo(e.target.value)}
           />
         </div>
-        <div className="signup-row">
-          <input
+        <div className="flex flex-wrap gap-2.5">
+          <Input
             type="email"
             placeholder="you@example.com"
             required
             aria-label="Email address"
+            className="min-w-0 flex-1 basis-[240px] py-3.5"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button type="submit" disabled={busy}>
+          <Button type="submit" disabled={busy} size="lg">
             {status === "submitting" ? "Adding you…" : status === "success" ? "Added ✓" : submitLabel}
-          </button>
+          </Button>
         </div>
       </form>
-      <div className={`form-msg${message ? (message.ok ? " ok" : " err") : ""}`} role="status" aria-live="polite">
-        {message?.text}
+      <div className="mt-3 min-h-9">
+        {message && (
+          <Alert variant={message.ok ? "success" : "destructive"}>
+            <AlertDescription>{message.text}</AlertDescription>
+          </Alert>
+        )}
       </div>
     </>
   );
