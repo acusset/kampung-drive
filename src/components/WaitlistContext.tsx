@@ -1,7 +1,10 @@
 "use client";
 
 import { createContext, useCallback, useContext, useState, type ReactNode } from "react";
-import type { WaitlistSummary } from "@/lib/waitlistStore";
+export type WaitlistSummary = {
+  count: number;
+  trending: { from: string; to: string; count: number }[];
+};
 
 type WaitlistContextValue = WaitlistSummary & {
   applyUpdate: (next: WaitlistSummary) => void;

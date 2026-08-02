@@ -1,5 +1,14 @@
 import { NextResponse } from "next/server";
-import { addWaitlistEntry, getWaitlistSummary } from "@/lib/waitlistStore";
+import type { WaitlistSummary } from "@/components/WaitlistContext";
+
+const PLACEHOLDER: WaitlistSummary = {
+  count: 42,
+  trending: [
+    { from: "Clementi", to: "One-North", count: 12 },
+    { from: "Jurong East", to: "Raffles Place", count: 9 },
+    { from: "Tampines", to: "Marina Bay", count: 7 },
+  ],
+};
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -11,8 +20,7 @@ function titleCase(value: string): string {
 }
 
 export async function GET() {
-  const summary = await getWaitlistSummary();
-  return NextResponse.json(summary);
+  return NextResponse.json(PLACEHOLDER);
 }
 
 export async function POST(request: Request) {
@@ -29,6 +37,5 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
   }
 
-  const summary = await addWaitlistEntry({ email, from, to });
-  return NextResponse.json(summary);
+  return NextResponse.json({ ...PLACEHOLDER, count: PLACEHOLDER.count + 1 });
 }
