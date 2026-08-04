@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useState, type ReactNode } from "react";
+import { createContext, use, useCallback, useState, type ReactNode } from "react";
 export type WaitlistSummary = {
   count: number;
 };
@@ -29,9 +29,9 @@ export function WaitlistProvider({
 }
 
 export function useWaitlist() {
-  const ctx = useContext(WaitlistContext);
-  if (!ctx) {
+  const waitlistContext = use(WaitlistContext);
+  if (!waitlistContext) {
     throw new Error("useWaitlist must be used within a WaitlistProvider");
   }
-  return ctx;
+  return waitlistContext;
 }
