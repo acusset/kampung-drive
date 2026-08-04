@@ -1,5 +1,6 @@
 "use server";
 
+import { track } from "@vercel/analytics/server";
 import { z } from "zod";
 
 const signupSchema = z.object({
@@ -28,6 +29,9 @@ export async function signupAction(
   });
 
   if (!parsed.success) {
+    const email = String(formData.get("email") ?? "").trim();
+    const role = formData.get("role") === "rider" ? "rider" : "driver";
+    track("waitlist_signup_error", { role, reason: email ? "invalid_format" : "empty" });
     return {
       status: "error",
       message: parsed.error.issues[0]?.message ?? "Enter a valid email address.",
@@ -35,6 +39,8 @@ export async function signupAction(
   }
 
   const { email, role } = parsed.data;
+
+  track("waitlist_signup", { role });
 
   // Database isn't wired up yet — log for now, persist once it is.
   console.log(`[waitlist] ${role} signup: ${email}`);
