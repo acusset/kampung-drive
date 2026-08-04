@@ -1,5 +1,7 @@
 "use server";
 
+import { track } from '@vercel/analytics/server';
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export type SignupState = {
@@ -15,12 +17,19 @@ export async function signupAction(
   const role = formData.get("role") === "rider" ? "rider" : "driver";
 
   if (!email) {
+    track("waitlist_signup_error", { role, reason: "empty" });
     return { status: "error", message: "Enter your email address." };
   }
+
   if (!EMAIL_RE.test(email)) {
+    track("waitlist_signup_error", { role, reason: "invalid_format" });
     return { status: "error", message: "Enter a valid email address." };
   }
 
+  track("waitlist_signup", {
+    role,
+  });
+  
   // Database isn't wired up yet — log for now, persist once it is.
   console.log(`[waitlist] ${role} signup: ${email}`);
 
