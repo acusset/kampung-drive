@@ -3,7 +3,6 @@
 import { createContext, useCallback, useContext, useState, type ReactNode } from "react";
 export type WaitlistSummary = {
   count: number;
-  trending: { from: string; to: string; count: number }[];
 };
 
 type WaitlistContextValue = WaitlistSummary & {

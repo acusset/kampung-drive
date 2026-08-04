@@ -1,4 +1,3 @@
-import AutocompleteData from "@/components/AutocompleteData";
 import Commute from "@/components/Commute";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
@@ -11,11 +10,6 @@ import { WaitlistProvider, type WaitlistSummary } from "@/components/WaitlistCon
 
 const PLACEHOLDER_SUMMARY: WaitlistSummary = {
   count: 42,
-  trending: [
-    { from: "Clementi", to: "One-North", count: 12 },
-    { from: "Jurong East", to: "Raffles Place", count: 9 },
-    { from: "Tampines", to: "Marina Bay", count: 7 },
-  ],
 };
 
 export default async function Home() {
@@ -35,7 +29,6 @@ export default async function Home() {
         <Faq />
       </main>
       <Footer />
-      <AutocompleteData />
     </WaitlistProvider>
   );
 }
