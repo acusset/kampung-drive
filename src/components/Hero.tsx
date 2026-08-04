@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Key } from "@heroui/react";
 import { ToggleButton, ToggleButtonGroup } from "@heroui/react";
+import { track } from "@vercel/analytics";
 import Eyebrow from "./Eyebrow";
 import SignupForm from "./SignupForm";
 import TransitDiagram from "./TransitDiagram";
@@ -59,7 +60,10 @@ export default function Hero() {
             selectedKeys={new Set<Key>([role])}
             onSelectionChange={(keys) => {
               const [value] = [...keys];
-              if (value) setRole(value as Role);
+              if (value) {
+                setRole(value as Role);
+                track("role_toggle", { role: value as Role });
+              }
             }}
             className="mb-7 flex gap-1 rounded-full bg-surface-secondary p-1"
           >
