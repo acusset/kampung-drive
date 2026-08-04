@@ -1,9 +1,10 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
-import { signupAction, type SignupState } from "@/app/actions";
-import { Alert, Button, Input } from "@heroui/react";
+import { signupAction, type SignupState } from "@/app/actions/signup";
 import { cn } from "@/lib/utils";
+import { Alert, Button, FieldError, Input, Label, TextField } from "@heroui/react";
+import { useActionState, useEffect, useRef } from "react";
+import { z } from "zod";
 
 const initialState: SignupState = { status: "idle", message: "" };
 
@@ -33,15 +34,22 @@ export default function SignupForm({
         action={formAction}
       >
         <input type="hidden" name="role" value={role} />
-        <div className="flex flex-wrap gap-2.5">
-          <Input
-            type="email"
+        <div className="flex flex-wrap gap-2.5 items-start">
+          <TextField
+            isRequired
+            className="min-w-0 flex-1 basis-[240px]"
             name="email"
-            placeholder="you@example.com"
-            required
-            aria-label="Email address"
-            className="min-w-0 flex-1 basis-[240px] py-3.5"
-          />
+            type="email"
+            validate={(value) =>
+              value.length === 0 || z.regexes.html5Email.test(value)
+                ? null
+                : "Enter a valid email address."
+            }
+          >
+            <Label className="sr-only">Email address</Label>
+            <Input fullWidth placeholder="you@example.com" className="py-3.5" />
+            <FieldError />
+          </TextField>
           <Button type="submit" isDisabled={pending} size="lg">
             {pending ? "Adding you…" : state.status === "success" ? "Added ✓" : submitLabel}
           </Button>
