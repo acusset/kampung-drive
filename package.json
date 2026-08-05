@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "drizzle-kit migrate",
+    "postbuild": "drizzle-kit migrate",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
