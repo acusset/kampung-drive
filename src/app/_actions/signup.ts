@@ -3,6 +3,9 @@
 import { track } from "@vercel/analytics/server";
 import { z } from "zod";
 
+import { db } from "@/lib/db";
+import { waitlistSignups } from "@/lib/db/schema";
+
 const signupSchema = z.object({
   email: z
     .email({ pattern: z.regexes.html5Email, message: "Enter a valid email address." })

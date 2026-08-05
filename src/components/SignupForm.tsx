@@ -1,6 +1,6 @@
 "use client";
 
-import { signupAction, type SignupState } from "@/app/actions/signup";
+import { signupAction, type SignupState } from "@/app/_actions/signup";
 import { cn } from "@/lib/utils";
 import { Alert, Button, FieldError, Input, Label, TextField } from "@heroui/react";
 import { useActionState, useEffect, useRef } from "react";

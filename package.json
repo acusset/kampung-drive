@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "drizzle-kit migrate",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "db:up": "docker compose --env-file .env.local up -d",
+    "db:up": "docker compose --env-file .env.local up",
     "db:down": "docker compose --env-file .env.local down",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
