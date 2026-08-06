@@ -2,7 +2,7 @@
 
 import { signupAction, type SignupState } from "@/app/_actions/signup";
 import { cn } from "@/lib/utils";
-import { FieldError, Input, Label, TextField } from "@heroui/react";
+import { Chip, FieldError, Input, Label, TextField } from "@heroui/react";
 import { useActionState } from "react";
 import { SubmitButton } from "./SubmitButton";
 
@@ -17,6 +17,24 @@ export default function SignupForm({
 }) {
   const [state, formAction] = useActionState(signupAction, initialState);
 
+  if (state.status === "success") {
+    return (
+      <div
+        role="status"
+        aria-live="polite"
+        className={cn("mt-8 max-w-[460px]", center && "mx-auto")}
+      >
+        <Chip
+          variant="soft"
+          color="success"
+          className="gap-2 border border-success/25 py-1.5"
+        >
+          {state.message}
+        </Chip>
+      </div>
+    );
+  }
+
   return (
       <form
         className={cn(
@@ -26,7 +44,7 @@ export default function SignupForm({
         action={formAction}
       >
         <input type="hidden" name="role" value={role} />
-        <div className="flex flex-wrap gap-2.5 items-start">
+        <div className="flex flex-wrap gap-2.5 items-start" aria-live="polite">
           <TextField
             isRequired
             name="email"
@@ -44,6 +62,6 @@ export default function SignupForm({
           </TextField>
           <SubmitButton/>
         </div>
-      </form>    
+      </form>
   );
 }
