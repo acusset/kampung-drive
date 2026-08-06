@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import type { Key } from "@heroui/react";
 import { ToggleButton, ToggleButtonGroup } from "@heroui/react";
 import { track } from "@vercel/analytics";
+import { useState } from "react";
 import SignupForm from "./SignupForm";
 
 type Role = "driver" | "rider";
@@ -67,7 +67,7 @@ export default function HeroSignup() {
 
       <h1>{copy.h1}</h1>
       <p className="sub">{copy.sub}</p>
-      <SignupForm submitLabel={copy.cta} role={role} />
+      <SignupForm role={role} />
     </>
   );
 }

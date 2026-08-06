@@ -13,7 +13,7 @@ export default function SignupSection() {
           moment your block goes live.
         </p>
 
-        <SignupForm submitLabel="Join the waitlist" center />
+        <SignupForm center />
 
         <WaitlistCount />
         <p className="micro mt-3.5">
