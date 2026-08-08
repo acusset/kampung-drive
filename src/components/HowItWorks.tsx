@@ -22,12 +22,16 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section id="how">
-      <div className="wrap">
-        <Reveal className="section-head">
+    <section id="how" className="py-20">
+      <div className="mx-auto max-w-[1120px] px-8 max-[640px]:px-5">
+        <Reveal className="mb-12 max-w-[640px]">
           <Eyebrow>HOW IT WORKS</Eyebrow>
-          <h2>Three steps, no detours.</h2>
-          <p>Kampung Ride matches on the two things that actually matter: your estate, and your schedule.</p>
+          <h2 className="font-[family-name:var(--serif)] text-[clamp(26px,3.2vw,38px)] font-bold tracking-[-0.01em] text-foreground">
+            Three steps, no detours.
+          </h2>
+          <p className="mt-3.5 max-w-[560px] text-[17px] text-muted">
+            Kampung Ride matches on the two things that actually matter: your estate, and your schedule.
+          </p>
         </Reveal>
         <div className="grid grid-cols-3 gap-7 max-[820px]:grid-cols-1">
           {STEPS.map((step) => (

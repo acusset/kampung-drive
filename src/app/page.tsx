@@ -20,10 +20,10 @@ export default async function Home() {
       <Nav />
       <main id="top">
         <Hero />
-        <hr className="divider" />
+        <hr className="h-px border-none bg-border" />
         <Problem />
         <HowItWorks />
-        <hr className="divider" />
+        <hr className="h-px border-none bg-border" />
         <Commute />
         <SignupSection />
         <Faq />

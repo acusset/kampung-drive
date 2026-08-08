@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { cn } from "@/lib/utils";
+import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
+import { Geist } from "next/font/google";
+import "./globals.css";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -19,9 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("dark font-sans", geist.variable)}>
-      <body>
+    <html
+      lang="en"
+      className={cn("dark scroll-smooth font-sans [color-scheme:dark]", geist.variable)}
+    >
+      <body className="overflow-x-hidden bg-background font-[family-name:var(--sans)] leading-[1.6] text-foreground">
+        <ThemeProvider attribute="class" defaultTheme="light">
         {children}
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

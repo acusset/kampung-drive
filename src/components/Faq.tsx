@@ -18,17 +18,19 @@ const FAQS = [
 
 export default function Faq() {
   return (
-    <section id="faq">
-      <div className="wrap">
-        <Reveal className="section-head">
+    <section id="faq" className="py-20">
+      <div className="mx-auto max-w-[1120px] px-8 max-[640px]:px-5">
+        <Reveal className="mb-12 max-w-[640px]">
           <Eyebrow>FAQ</Eyebrow>
-          <h2>Before you ask.</h2>
+          <h2 className="font-[family-name:var(--serif)] text-[clamp(26px,3.2vw,38px)] font-bold tracking-[-0.01em] text-foreground">
+            Before you ask.
+          </h2>
         </Reveal>
-        <div style={{ maxWidth: 680 }}>
+        <div className="max-w-[680px]">
           {FAQS.map((item) => (
-            <Reveal key={item.q} className="faq-item">
-              <h3>{item.q}</h3>
-              <p>{item.a}</p>
+            <Reveal key={item.q} className="border-b border-border py-5.5">
+              <h3 className="mb-2 text-[17px] font-bold text-foreground">{item.q}</h3>
+              <p className="text-[15px] text-muted">{item.a}</p>
             </Reveal>
           ))}
         </div>

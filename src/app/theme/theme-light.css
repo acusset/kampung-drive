@@ -1,0 +1,37 @@
+/* Light variant of the Kampung Ride palette. Opt in with <html data-theme="light">. */
+:root[data-theme="light"] {
+  --bg: #f7f3e7;
+  --bg-panel: #efe8d4;
+  --bg-panel-2: #e6dcc0;
+  --cream: #17332d;
+  --cream-dim: #55655c;
+  --amber: #a8690f;
+  --coral: #c14328;
+  --sage: #3f6d59;
+  --line: rgba(23, 51, 45, 0.14);
+
+  --background: var(--bg);
+  --foreground: var(--cream);
+  --surface: var(--bg-panel);
+  --surface-foreground: var(--cream);
+  --surface-secondary: var(--bg-panel-2);
+  --overlay: var(--bg-panel);
+  --overlay-foreground: var(--cream);
+  --muted: var(--cream-dim);
+  --accent: var(--amber);
+  --accent-foreground: #fff6e8;
+  --success: var(--sage);
+  --success-foreground: #f0faf5;
+  --danger: var(--coral);
+  --danger-foreground: #fff3ee;
+  --border: var(--line);
+  --separator: var(--line);
+  --field-background: #ffffff;
+  --field-foreground: var(--cream);
+  --field-border: var(--line);
+  --field-border-width: 1px;
+  --field-placeholder: #7c8a80;
+  --radius: 0.625rem;
+
+  color-scheme: light;
+}

@@ -17,7 +17,7 @@ export default function TransitDiagram() {
           aria-label="Diagram of a direct shared commute route from Normanton Park to Raffles Place with three neighbours riding together"
         >
           <line x1="24" y1="90" x2="316" y2="90" stroke="#3E655C" strokeWidth={3} />
-          <g className="rider-dot">
+          <g className="motion-safe:animate-ride motion-reduce:translate-x-[116px]">
             <circle cx="24" cy="90" r="7" fill="#F2A93B" />
           </g>
           <g>

@@ -30,12 +30,16 @@ const NEIGHBOURS = [
 
 export default function Commute() {
   return (
-    <section id="commute" className="commute">
-      <div className="wrap">
-        <Reveal className="section-head">
+    <section id="commute" className="bg-surface py-20">
+      <div className="mx-auto max-w-[1120px] px-8 max-[640px]:px-5">
+        <Reveal className="mb-12 max-w-[640px]">
           <Eyebrow>MEET YOUR COMMUTE</Eyebrow>
-          <h2>Your neighbours are already going your way.</h2>
-          <p>A few of the regular runs being registered near The Interlace this week.</p>
+          <h2 className="font-[family-name:var(--serif)] text-[clamp(26px,3.2vw,38px)] font-bold tracking-[-0.01em] text-foreground">
+            Your neighbours are already going your way.
+          </h2>
+          <p className="mt-3.5 max-w-[560px] text-[17px] text-muted">
+            A few of the regular runs being registered near The Interlace this week.
+          </p>
         </Reveal>
         <div className="grid grid-cols-3 gap-5 max-[820px]:grid-cols-1">
           {NEIGHBOURS.map((person) => (

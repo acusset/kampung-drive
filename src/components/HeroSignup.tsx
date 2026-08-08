@@ -12,14 +12,15 @@ const COPY: Record<Role, { h1: React.ReactNode; sub: React.ReactNode; cta: strin
   driver: {
     h1: (
       <>
-        You&rsquo;re already driving. <em>Make your neighbours pay for it.</em>
+        You&rsquo;re already driving.{" "}
+        <em className="text-accent italic">Make your neighbours pay for it.</em>
       </>
     ),
     sub: (
       <>
         Kampung Ride is how neighbours share the ride they&rsquo;re already making. Register your
         regular commute, and let people from your own estate tag along &mdash;{" "}
-        <b>same block, same route, same time.</b>
+        <b className="font-semibold text-foreground">same block, same route, same time.</b>
       </>
     ),
     cta: "Get early access",
@@ -27,14 +28,14 @@ const COPY: Record<Role, { h1: React.ReactNode; sub: React.ReactNode; cta: strin
   rider: {
     h1: (
       <>
-        Grab charges surge. <em>Your neighbour doesn&rsquo;t.</em>
+        Grab charges surge. <em className="text-accent italic">Your neighbour doesn&rsquo;t.</em>
       </>
     ),
     sub: (
       <>
         Someone from your estate is already driving your exact route every week. Register your
         commute and we&rsquo;ll put you in that empty seat &mdash;{" "}
-        <b>no surge, no strangers from across the island.</b>
+        <b className="font-semibold text-foreground">no surge, no strangers from across the island.</b>
       </>
     ),
     cta: "Find my neighbour",
@@ -65,8 +66,10 @@ export default function HeroSignup() {
         <ToggleButton id="rider">I need a ride</ToggleButton>
       </ToggleButtonGroup>
 
-      <h1>{copy.h1}</h1>
-      <p className="sub">{copy.sub}</p>
+      <h1 className="max-w-[620px] font-[family-name:var(--serif)] text-[clamp(34px,4.6vw,56px)] font-bold leading-[1.06] tracking-[-0.01em] text-foreground">
+        {copy.h1}
+      </h1>
+      <p className="mt-5.5 max-w-[520px] text-lg text-muted">{copy.sub}</p>
       <SignupForm role={role} />
     </>
   );

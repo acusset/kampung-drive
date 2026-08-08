@@ -32,7 +32,10 @@ export default function Reveal({
   }, []);
 
   return (
-    <div ref={ref} className={`fade${visible ? " in" : ""}${className ? ` ${className}` : ""}`}>
+    <div
+      ref={ref}
+      className={`transition-[opacity,transform] duration-[600ms] ease motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}${className ? ` ${className}` : ""}`}
+    >
       {children}
     </div>
   );
